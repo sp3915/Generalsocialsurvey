@@ -1,5 +1,5 @@
 --- 
-title: "Crime Analysis"
+title: "General Social survey"
 author: "Sai Prashanth Pathi, Vishwas Reddy Thuniki, Nishi Modi"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

@@ -1,8 +1,8 @@
 book_filename: "finalproj"
 output_dir: docs
 delete_merged_file: true
-edit: https://github.com/sp3915/crimeanalysis/edit/main/%s
-view: https://github.com/sp3915/crimeanalysis/blob/main/%s
+edit: https://github.com/sp3915/Generalsocialsurvey/edit/main/%s
+view: https://github.com/sp3915/Generalsocialsurvey/blob/main/%s
 language:
   ui:
     chapter_name: "Chapter "
