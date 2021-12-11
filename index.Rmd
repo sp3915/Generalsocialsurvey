@@ -7,3 +7,4 @@ site: bookdown::bookdown_site
 
 # Introduction
 
+Our group consists of International students who have traveled to the Unites States of America in order to pursue higher education. Every international student first question before travelling to a foreign land is know how safe the place is. In order to explore this question we have taken up Crime Analysis as our final project for EDAV course. 
