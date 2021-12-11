@@ -1,1 +1,7 @@
 # Data transformation
+
+rincome column being categorical in income range is being converted to numerical by taking average numerical value of the groups income range. This converted numerical is being used to plot graphs.
+
+Nulls values ????
+
+

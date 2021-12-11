@@ -1,2 +1,16 @@
 # Data sources
 
+The data has been downloaded from https://gssdataexplorer.norc.org/. The General Social Survey (GSS) is a project of NORC at the University of Chicago, with principal funding from the National Science Foundation. Since 1972, the GSS has been monitoring societal change and studying the growing complexity of American society. The GSS is a publicly available national resource, and is one of the most frequently analyzed sources of information in the social sciences.
+
+The data has 21483 records and 9 variables.  
+
+Variables are as follows- 
+Year, age and tvhours are numerical.
+rincome is categorical in income range.  
+marital status, race, party affiliation, religion, denomination are categorical variables.
+
+
+
+
+Describe any issues / problems with the data, either known or that you discover???????
+(includes both numerical and categoraical) year, age, marital status, race,income, party affiliation, religion, denomination, tvhours.

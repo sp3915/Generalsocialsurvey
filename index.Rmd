@@ -7,4 +7,15 @@ site: bookdown::bookdown_site
 
 # Introduction
 
-Our group consists of International students who have traveled to the Unites States of America in order to pursue higher education. Every international student first question before travelling to a foreign land is know how safe the place is. In order to explore this question we have taken up Crime Analysis as our final project for EDAV course. 
+As a part of EDAV course final project, we would be analyzing the general social factors of United States like age, race, religion, martial status, etc. Through this analysis we aim to explain trends in American behaviors, demographics, and opinions. We would be trying to answer questions like:
+
+1) How the average income change over the years?
+2) How does income distribute across different age groups and its change over time?
+3) Did any race show significant growth in income compared to others?
+4) Does marital status have an effect on income?
+5) Does watching more TV suggest lower income?
+6) Do old people tend to watch more TV than younger people?
+7) Does marital status affect the amount of time someone watches TV?
+8) Is there a significant income difference between different races, parties, denominations
+and religions? If not, was there any such difference in the past?
+9) Are there any dependencies between religion and political parties?
