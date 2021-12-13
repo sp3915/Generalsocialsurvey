@@ -1,0 +1,120 @@
+year,name,n
+2000,Black,25784.05
+2002,Black,28428.57
+2004,Black,30550.85
+2006,Black,32545.71
+2008,Black,29806.55
+2010,Black,29965.32
+2012,Black,33529.59
+2014,Black,31763.37
+2000,Christian,31108.79
+2002,Christian,33059.93
+2004,Christian,34209.73
+2006,Christian,34781.9
+2008,Christian,34482.82
+2010,Christian,32828.65
+2012,Christian,33835.97
+2014,Christian,35988.97
+2000,Democrat,31846.01
+2002,Democrat,34646.7
+2004,Democrat,32833.61
+2006,Democrat,35678.07
+2008,Democrat,33741.86
+2010,Democrat,32356.78
+2012,Democrat,35182.96
+2014,Democrat,36290.32
+2000,Divorced,33751.63
+2002,Divorced,34812.7
+2004,Divorced,36274.02
+2006,Divorced,36821.9
+2008,Divorced,37449.1
+2010,Divorced,36290.64
+2012,Divorced,36810.81
+2014,Divorced,37875.48
+2000,Hindu,32850
+2002,Hindu,40321.43
+2004,Hindu,42941.18
+2006,Hindu,37568.97
+2008,Hindu,46900
+2010,Hindu,32045.45
+2012,Hindu,47045.45
+2014,Hindu,38796.3
+2000,Independent,29084.4
+2002,Independent,30142.42
+2004,Independent,33611.21
+2006,Independent,31642.4
+2008,Independent,33113.85
+2010,Independent,31513.32
+2012,Independent,30419.64
+2014,Independent,34470.32
+2000,Jew,43262.5
+2002,Jew,39629.63
+2004,Jew,42328.57
+2006,Jew,37236.11
+2008,Jew,39211.54
+2010,Jew,36975
+2012,Jew,41875
+2014,Jew,43592.59
+2000,Married,34109.61
+2002,Married,35219.48
+2004,Married,36926.83
+2006,Married,37078.2
+2008,Married,38006.86
+2010,Married,36625.91
+2012,Married,38204.55
+2014,Married,39357.04
+2000,Muslim,35416.67
+2002,Muslim,35300
+2004,Muslim,28800
+2006,Muslim,38200
+2008,Muslim,35187.5
+2010,Muslim,30375
+2012,Muslim,39857.14
+2014,Muslim,26666.67
+2000,Native American,28250
+2002,Native American,33750
+2004,Native American,6500
+2006,Native American,33750
+2008,Native American,50000
+2010,Native American,22500
+2012,Native American,10750
+2000,Never married,27731.87
+2002,Never married,28277.78
+2004,Never married,28416.46
+2006,Never married,29879.67
+2008,Never married,29281.25
+2010,Never married,26851.09
+2012,Never married,25905.52
+2014,Never married,29951.03
+2000,Republican,35567.03
+2002,Republican,35205.08
+2004,Republican,36605.91
+2006,Republican,37728.4
+2008,Republican,38345
+2010,Republican,35818.49
+2012,Republican,37001.89
+2014,Republican,38292.45
+2000,Separated,26664.47
+2002,Separated,31491.07
+2004,Separated,27654.55
+2006,Separated,29843.02
+2008,Separated,24766.67
+2010,Separated,26086.96
+2012,Separated,29071.43
+2014,Separated,30990.2
+2000,White,32656.86
+2002,White,34022.94
+2004,White,35038.35
+2006,White,35744.96
+2008,White,35910.1
+2010,White,34312.5
+2012,White,33839.39
+2014,White,37481.68
+2000,Widowed,26267.24
+2002,Widowed,29307.69
+2004,Widowed,27346.94
+2006,Widowed,27142.86
+2008,Widowed,31976.19
+2010,Widowed,26923.08
+2012,Widowed,25796.88
+2014,Widowed,34263.64
