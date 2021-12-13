@@ -12,3 +12,5 @@ tv-hours
 race-religion-marital-status
 interactive-component
 conclusion
+learnings
+future-scope

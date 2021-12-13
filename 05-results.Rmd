@@ -2,7 +2,7 @@
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Income
@@ -26,7 +26,8 @@ gss_cat %>%
   scale_fill_manual(values = c("FALSE" = "light blue", "TRUE" = "pink")) +
   theme(legend.position = "None")
 ```
-Here, we can see that the number of respondents are the highest in $25,000 or more bucket. The percentage of respondents with 10,000 or more income is higher than the other cateogories. There are significant number of respondents whose income is not known as seen in the distribution. 
+We can see that the number of respondents are the highest in $25,000 or more bucket. The percentage of respondents with 10,000 or more income is higher than the other categories. There are significant number of respondents whose income is not known as seen in the distribution.
+
 
 Now, let us check the trend in the average annual income from 2000 to 2014. For this graph, we have considered the average of bucket size to get a numeric value of income. For the $25,000 or above bucket, we assumed a value of $50,000. Also, the values whose income is unknown have been removed for this analysis.
 
@@ -62,6 +63,7 @@ ggplot(data=avg_income_df, aes(x=year, y=avg_income, group=1)) +
 
 The average US income in 2014 is approximately $55,000 as per census. However, since we made few assumptions, the average in 2014 came out to be $36,000 which can be still good for the analyzing the trend. Here, we can observe that the average income increased from 2000 to 2008 and there is a sudden dip in 2010. We suspect that this could be due to the 2008 Financial crisis post which we can observe a rapid growth again. Now, let us observe the trend in average income differentiating it by race. Here, we want to check if there is income inequality based on race historically and how did it change over time.
 
+
 ```{r}
 avg_income_race_df <- ddply(gss_df, .(year, race), summarize,  avg_income=mean(new_income))
 
@@ -71,7 +73,9 @@ ggplot(data=avg_income_race_df, aes(x=year, y=avg_income, group=race,color=race)
   scale_x_continuous("Year", breaks= seq(2000, 2015, by=2))+
   scale_y_continuous("Average Income")
 ```
-Here, we can see that the income inequality between White and Black is approximately same in 2014 when compared to 2000. This could be due to the fact that there is a sudden decrease in average income of Black and other races from 2012 to 2014 where the income increased for White race. This could also be due to inconsistency in the data. However, we cannot conclude just based on the available data. An interesting observation to notice is that, the average income of other races has dropped the highest in 2010 and is very dynamic compared to other races. Now let us check the average income of respondents who support a particular political party.
+
+From above we see that the income inequality between White and Black is approximately same in 2014 when compared to 2000. This could be due to the fact that there is a sudden decrease in average income of Black and other races from 2012 to 2014 where the income increased for White race. This could also be due to inconsistency in the data. However, we cannot conclude just based on the available data. An interesting observation to notice is that, the average income of other races has dropped the highest in 2010 and is very dynamic compared to other races. Now let us check the average income of respondents who support a particular political party.
+
 
 ```{r}
 gss_df$new_party[gss_df$partyid=="No answer"]<-"Other"
@@ -95,6 +99,7 @@ ggplot(data=avg_income_party_df, aes(x=year, y=avg_income, group=new_party,color
 ```
 
 Here, we can observe that the average income of respondents supporting Republican party have higher average income than the respondents supporting Democrats. However, the difference is not significant suggesting the fact the political party affiliation and income are not dependent on each other. On a similar note, let us check if religion has an impact on person`s political party affiliation. For that, we have combined multiple religion categories into smaller groups for better visualization.
+
 
 ```{r}
 gss_df$new_relig[gss_df$relig=="Protestant"]<-"Christian"
@@ -131,7 +136,8 @@ ggplot(gss_df,
   theme_minimal()
 ```
 
-Here, we can observe that the percentage of Republican party supporters are highest in Christianity whereas the percetage of Democrat party supporters are highest in the respondents who are Jews and Muslims. Also, the percentage of independent candidate supporters are significant in each category who can either incline towards Democrats or Republicans which suggests that the party which is able to convert most of independent votes has the advatage of winning the elections. 
+We observe that the percentage of Republican party supporters are highest in Christianity whereas the percentage of Democrat party supporters are highest in the respondents who are Jews and Muslims. Also, the percentage of independent candidate supporters are significant in each category who can either incline towards Democrats or Republicans which suggests that the party which is able to convert most of independent votes has the advantage of winning the elections.
+
 
 Now let us go aback to income and check it based on religion and race at the same time. For this visualization, we have assumed income less than $10,000 to be Below Poverty and income greater than $10,000 as Above Poverty. Also, the religions have been condensed to Christianity vs Others for a simpler visualization.
 
@@ -199,9 +205,10 @@ ggplot(gss_df, aes(x=age, y=tvhours,  color = income_cat)) +
   geom_point(size=1)+scale_x_continuous("Age")+scale_y_continuous("TV Hours")
 ```
 
-1. Here, in each axis we can see that the blue dots are concentrated on either ends of each horizontal line which indicates that the income of older people and younger people is less compared to the middle age earning professionals.
-2. Here, we can see that the points with higher TV Hours values are concentrated on the upper left of the graph which indicates that the younger people watch more TV than old people which is counter intuitive to our assumption. 
+1. In each axis we can see that the blue dots are concentrated on either ends of each horizontal line which indicates that the income of older people and younger people is less compared to the middle age earning professionals.
+2. We can see that the points with higher TV Hours values are concentrated on the upper left of the graph which indicates that the younger people watch more TV than old people which is counter intuitive to our assumption. 
 3. In any given vertical line, the number of blue dots are increasing as we go up. This indicates that watching more TV corresponds to lower income. Or the other way to think about this could be, lower income respondents have more leisure time to watch TV. 
+
 
 Now, let us compare the dependencies between Marital Status,Religion, TV Hours and Income. We would like to answer the following questions:
 1. Do single people watch more TV than married people?
@@ -223,7 +230,7 @@ ggplot(marital_df, aes(x = interaction(new_marital, new_relig_1), y = tvhours, f
   geom_bar(stat = "identity", position = position_dodge())+scale_x_discrete("Religion vs Marital Status")+scale_y_continuous("TV Hours")
 ```
 
-1. Here, we can observe that the single people tend to watch more TV than Married people. The difference is not very significant in Christianity which is majority of our data. Hence, we cannot conclusively say that single people watch more TV than married people. However, the Below Poverty line respondents tend to watch more TV as observed from the previous plot as well.
+1. Here, we observe that the single people tend to watch more TV than Married people. The difference is not very significant in Christianity which is majority of our data. Hence, we cannot conclusively say that single people watch more TV than married people. However, the Below Poverty line respondents tend to watch more TV as observed from the previous plot as well.
 2. From the above graph, there is no impact of religion is not very relevant in Single people. However, married people of Other religions tend to watch more TV compared to married people in Christianity. This leads to an interesting question that does religion and race have relation with relationship status of people?
 
 ## Race, Religion & Marital status
@@ -235,4 +242,4 @@ new_marital_df <- filter(new_marital_df, MaritalStatus != "No answer")
 mosaic(~ Religion + MaritalStatus + Race, data = new_marital_df, highlighting = "MaritalStatus",highlighting_fill = c("lightblue", "pink"), direction = c("v", "h", "v"))
 ```
 
-Here, we can observe that the percentage of Single respondents is lesser in Christianity than other religions. Also, the percentage of Single people is lower in White race compared to other races. Respondents belonging to Christianity and White race are less probable to be Single than respondents belonging to White race and other religion. Though the plot provides a visual proof, we cannot decisively comment on these aspects as they are sensitive and require more study to get conclusive results.
+From above we observe that the percentage of Single respondents is lesser in Christianity than other religions. Also, the percentage of Single people is lower in White race compared to other races. Respondents belonging to Christianity and White race are less probable to be Single than respondents belonging to White race and other religion. Though the plot provides a visual proof, we cannot decisively comment on these aspects as they are sensitive and require more study to get conclusive results.
