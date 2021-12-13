@@ -1,2 +1,7 @@
 # Conclusion
-
+* Our project aims to explain trends of United States like race, religion, Martial status, etc to find wealth distribution across different race, religion and political party affiliation.
+* We could observe that people supporting Republic political party has higher average income than others and these respondents are mainly Christians. 
+* There are more Christians compared to people from other religion but the number go people below poverty line are similar for all religion. 
+* Using the scatter plot to depict the number of hours devoted in watching television, we can analyze that younger people watch more television than older people and people below poverty line spend more time compared to others.
+* The race, religion graph emphasizes that there are less single Christians and there are least number of singles for White Christians. 
+* This help us in understanding various aspects for people of different race and religion and tried to analyze our observations for Christians sine there are high number of Christians in our dataset.
