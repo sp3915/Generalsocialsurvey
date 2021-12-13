@@ -1,7 +1,6 @@
 # Data transformation
 
+We have selected the related variables and transformed them into the required format to address our questions from introduction, by **dplyr** package functions such as `mutate()`, `select()`, `filter()`, `group_by()`, etc.
+
+Example-
 rincome column being categorical in income range is being converted to numerical by taking average numerical value of the groups income range. This converted numerical is being used to plot graphs.
-
-Nulls values ????
-
-

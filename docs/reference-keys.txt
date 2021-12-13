@@ -1,7 +1,14 @@
 introduction
+overview
 data-sources
+source
+data
 data-transformation
 missing-values
 results
+income
+religion-vs-party-id
+tv-hours
+race-religion-marital-status
 interactive-component
 conclusion

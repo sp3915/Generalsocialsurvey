@@ -6,5 +6,6 @@ source("codes/plotmissing.R")
 plot_missing(gss_cat,TRUE)
 ```
 
-From the missing data plots one can see that tvhours column is the only field where we have missing values and it is roughly equal to 47% from the graph. 
-Since the percentage is very high we cannot impute the values, therefore we would be deleting the rows when using tvhours as a statistic.  
+* From the missing data plots one can see that tvhours column is the only field where we have missing values and it is roughly equal to 47% from the graph. Since the percentage is very high we cannot impute the values, therefore we would be deleting the rows when using tvhours as a statistic
+
+* All other columns are good to use
