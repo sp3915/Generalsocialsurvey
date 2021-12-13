@@ -24,7 +24,7 @@
 <meta name="author" content="Sai Prashanth Pathi, Vishwas Reddy Thuniki, Nishi Modi" />
 
 
-<meta name="date" content="2021-12-11" />
+<meta name="date" content="2021-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,148 @@
             <section class="normal" id="section-">
 <div id="interactive-component" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Interactive component</h1>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+</title>
+<script src="https://d3js.org/d3.v4.js"></script>
+<style type ="text/css">
+      
+      #format1{
+              font-size:20px;
+              font-family:Roboto;}
+              
+        </style>
+</head>
+<body>
+<p><text id="format1" x="200" y="80">Average income over the years (2000-2014) for each human classifier</text>
+</svg></p>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<p><br>
+<br>
+<text id="format1" x="200" y="80">Classifier</text>
+<br>
+<select id="selectButton"></select></p>
+<!-- Create a div where the graph will take place -->
+<div id="filtered_data">
+
+</div>
+<script>
+      
+      var svg3 = d3.select("#svg3")
+      var margin3 = {top: 100, right: 50, bottom: 30, left: 60}
+      var width3 =  +svg3.attr("width") - margin3.left - margin3.right
+      var height3 = +svg3.attr("height") - margin3.top - margin3.bottom
+      var g3 = svg3.append("g").attr("transform", `translate(${margin3.left}, ${margin3.top})`);
+      var parseTime = d3.timeParse("%b-%y");
+      var xScale3 = d3.scaleTime().range([0, width3]);
+      var yScale3 = d3.scaleLinear()
+        .domain([0, 3500])
+        .range([height3, 0]);
+      
+      
+      </script>
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 660 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#filtered_data")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+      
+      //Read the data
+d3.csv("https://gist.githubusercontent.com/sp3915/ba25c9f2ecbfd76c15629780424e57ca/raw/3eff2d3d661d058c2c290b163ff3f59b7237675f/gss_data",
+       function(d){
+    return { year : (d.year), name : d.name, n:d.n }
+  },
+       function(dataa) {
+
+    // List of groups (here I have one group per column)
+    var allGroup = d3.map(dataa, function(d){return(d.name)}).keys()
+
+    // add the options to the button
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+        .data(allGroup)
+      .enter()
+        .append('option')
+      .text(function (d) { return d; }) // text showed in the menu
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+      
+  
+  // A color scale: one color for each group
+    var myColor = d3.scaleOrdinal()
+      .domain(allGroup)
+      .range(d3.schemeSet2);
+
+   // Add X axis --> it is a date format
+    var x = d3.scaleLinear()
+      .domain([2000, d3.max(dataa, function(d) { return +d.year; })])
+      .range([ 0, width ]);
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain([500, d3.max(dataa, function(d) { return +d.n; })])
+      .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+       // Initialize line with first group of the list
+    var line = svg
+      .append('g')
+      .append("path")
+        .datum(dataa.filter(function(d){return d.name==allGroup[0]}))
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.year) })
+          .y(function(d) { return y(+d.n) })
+        )
+        .attr("stroke", function(d){ return myColor("valueA") })
+        .style("stroke-width", 4)
+        .style("fill", "none")
+
+    // A function that update the chart
+    function update_data(selectedGroup) {
+
+      // Create new data with the selection?
+      var dataFilter = dataa.filter(function(d){return d.name==selectedGroup})
+
+      // Give these new data to update line
+      line
+          .datum(dataFilter)
+          .transition()
+          .duration(1000)
+          .attr("d", d3.line()
+            .x(function(d) { return x(d.year) })
+            .y(function(d) { return y(+d.n) })
+          )
+          .attr("stroke", function(d){ return myColor(selectedGroup) })
+    }
+
+    // When the button is changed, run the updateChart function
+    d3.select("#selectButton").on("change", function(d) {
+        // recover the option that has been chosen
+        var selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update_data(selectedOption)
+    })
+
+})
+
+
+</script>
+</body>
+</html>
 
 </div>
             </section>

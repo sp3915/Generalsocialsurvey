@@ -66,7 +66,7 @@ var svg = d3.select("#filtered_data")
           "translate(" + margin.left + "," + margin.top + ")");
       
       //Read the data
-d3.csv("https://gist.githubusercontent.com/sp3915/ba25c9f2ecbfd76c15629780424e57ca/raw/cb4c288578872cafce48337d4c25f56417c92de2/gss_data",
+d3.csv("https://gist.githubusercontent.com/sp3915/ba25c9f2ecbfd76c15629780424e57ca/raw/3eff2d3d661d058c2c290b163ff3f59b7237675f/gss_data",
        function(d){
     return { year : (d.year), name : d.name, n:d.n }
   },

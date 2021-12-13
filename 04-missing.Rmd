@@ -2,7 +2,7 @@
 
 
 ```{r}
-source("plotmissing.R")
+source("codes/plotmissing.R")
 plot_missing(gss_cat,TRUE)
 ```
 
